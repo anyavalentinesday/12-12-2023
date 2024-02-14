@@ -1,0 +1,276 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: url('https://i.imgur.com/1GAWhih.png') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#top-panel {
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+}
+
+#date {
+    font-size: 36px; /* Increase font size */
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: white; /* Set text color to white */
+    text-shadow:
+        0 0 10px red,
+        0 0 20px red,
+        0 0 30px red,
+        0 0 40px red,
+        0 0 50px red,
+        0 0 60px red,
+        0 0 70px red; /* Add red glow effect for text */
+    animation: glowText 2s infinite alternate; /* Apply animation to the text shadow */
+}
+
+@keyframes glowText {
+    0% {
+        text-shadow:
+            0 0 10px red,
+            0 0 20px red,
+            0 0 30px red,
+            0 0 40px red,
+            0 0 50px red,
+            0 0 60px red,
+            0 0 70px red; /* Initial glow effect */
+    }
+    100% {
+        text-shadow:
+            0 0 20px red,
+            0 0 40px red,
+            0 0 60px red,
+            0 0 80px red,
+            0 0 100px red,
+            0 0 120px red,
+            0 0 140px red; /* Increased glow effect */
+    }
+}
+
+
+
+#time-counter {
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 20px;
+}
+
+#left-panel {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#right-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#book {
+    width: 400px;
+    height: 500px;
+    background-color: white;
+    border: 2px solid black;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.page {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: auto;
+}
+
+#navigation {
+    margin-top: 20px;
+}
+
+#next-page-btn,
+#go-back-btn {
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #ff69b4; /* Hot pink color */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transition for background-color and box-shadow */
+    border-radius: 20px; /* Rounded corners */
+    box-shadow:
+        0 0 10px rgba(0, 0, 0, 0.7),
+        0 0 20px rgba(0, 0, 0, 0.9),
+        0 0 30px rgba(0, 0, 0, 0.7); /* Initial glow effect */
+}
+
+/* Hover styles */
+#next-page-btn:hover,
+#go-back-btn:hover {
+    background-color: #ff1493; /* Lighter pink color on hover */
+    box-shadow:
+        0 0 20px rgba(0, 0, 0, 0.9),
+        0 0 40px rgba(0, 0, 0, 0.9),
+        0 0 60px rgba(0, 0, 0, 0.9); /* Increased glow effect on hover */
+}
+
+/* Animation for button glow */
+@keyframes glowButton {
+    0% {
+        box-shadow:
+            0 0 10px rgba(0, 0, 0, 0.7),
+            0 0 20px rgba(0, 0, 0, 0.9),
+            0 0 30px rgba(0, 0, 0, 0.7); /* Initial glow effect */
+    }
+    100% {
+        box-shadow:
+            0 0 20px rgba(0, 0, 0, 0.9),
+            0 0 40px rgba(0, 0, 0, 0.9),
+            0 0 60px rgba(0, 0, 0, 0.9); /* Increased glow effect */
+    }
+}
+
+
+
+#page-counter {
+    color: white;
+    margin-top: 10px;
+}
+
+@keyframes glow {
+    0% { box-shadow: 0 0 10px 5px rgba(255, 0, 0, 0.7); }
+    50% { box-shadow: 0 0 20px 10px rgba(255, 0, 0, 0.9); }
+    100% { box-shadow: 0 0 10px 5px rgba(255, 0, 0, 0.7); }
+}
+
+#book {
+    width: 400px;
+    height: 500px;
+    background-color: white;
+    position: relative;
+    margin-bottom: 20px;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    animation: glow 2s infinite alternate; /* Apply animation */
+}
+
+/* Update the button style */
+button {
+    background-color: #ff69b4; /* Hot pink */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff1493; /* Lighter pink on hover */
+}
+
+/* Update the volume slider style */
+#volumeSlider {
+    width: 200px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: #ff0000; /* Red color for slider track */
+    -webkit-appearance: none; /* Remove default styling */
+    appearance: none;
+    outline: none; /* Remove default focus styling */
+}
+
+#volumeSlider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Remove default styling */
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #ff69b4; /* Red color for slider thumb */
+    cursor: pointer;
+}
+
+/* Add styles for the top bar */
+#top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width */
+    background-color: white; /* Hot pink */
+    color: white;
+    font-size: 16px;
+    padding: 10px 0;
+    overflow: hidden;
+    color: red;
+}
+
+#slider-content {
+    display: inline-block;
+    white-space: nowrap;
+    animation: marquee 70s linear infinite;
+}
+
+#slider-content p {
+    display: inline-block;
+    margin: 0;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+
+
+#container {
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards; /* Fade in animation */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Hover styles */
+#play-btn:hover{
+    background-color: #ff1493;
+}
+
+
+#luna {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-size: cover;
+    background-position: center;
